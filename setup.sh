@@ -116,13 +116,14 @@ else
     echo "安装后手动运行: bash $SCRIPT_DIR/refresh.sh"
 fi
 
+# 安装定时刷新任务
+echo ""
+bash "$SCRIPT_DIR/install.sh"
+
 echo ""
 echo "========================================="
-echo "  初始化完成！"
+echo "  全部完成！"
 echo "========================================="
 echo ""
-echo "下一步：安装自动刷新定时任务"
-echo "  bash $SCRIPT_DIR/install.sh"
-echo ""
-echo "或手动刷新 token："
-echo "  bash $SCRIPT_DIR/refresh.sh"
+echo "手动刷新: bash $SCRIPT_DIR/refresh.sh"
+echo "卸载定时任务: bash $SCRIPT_DIR/install.sh uninstall"

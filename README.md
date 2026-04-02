@@ -8,19 +8,10 @@
 - [Claude Code](https://claude.ai/claude-code) 已安装
 - `curl`、`jq`、`python3`（macOS 自带或通过 Homebrew 安装）
 
-## 快速开始
-
-### 1. 克隆项目
+## 一键安装
 
 ```bash
-git clone https://github.com/andyleimc-source/mingdao-mcp-setup.git ~/.config/mingdao-mcp
-cd ~/.config/mingdao-mcp
-```
-
-### 2. 初始化配置
-
-```bash
-bash setup.sh
+git clone https://github.com/andyleimc-source/mingdao-mcp-setup.git ~/.config/mingdao-mcp && bash ~/.config/mingdao-mcp/setup.sh
 ```
 
 按提示输入三个参数：
@@ -31,23 +22,17 @@ bash setup.sh
 | `CLIENT_SECRET` | OAuth 客户端密钥（联系管理员获取） |
 | `REFRESH_TOKEN` | 刷新令牌（通过 OAuth 授权流程获取） |
 
-脚本会自动验证凭据、获取 access_token、并配置 Claude Code MCP。
+脚本会自动：验证凭据 → 配置 Claude Code MCP → 安装定时刷新任务。
 
-### 3. 安装自动刷新（推荐）
-
-```bash
-bash install.sh
-```
-
-安装后：
+安装完成后：
 - 每 20 小时自动刷新 token（access_token 有效期 24 小时）
 - 开机 / 唤醒后立即刷新
 - 刷新失败会弹出 macOS 通知提醒
 
-### 卸载定时任务
+## 卸载
 
 ```bash
-bash install.sh uninstall
+bash ~/.config/mingdao-mcp/install.sh uninstall
 ```
 
 ## 手动刷新
